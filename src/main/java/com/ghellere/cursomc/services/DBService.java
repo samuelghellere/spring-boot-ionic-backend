@@ -1,34 +1,15 @@
 package com.ghellere.cursomc.services;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-
+import com.ghellere.cursomc.domain.*;
+import com.ghellere.cursomc.domain.enums.EstadoPagamento;
+import com.ghellere.cursomc.domain.enums.TipoCliente;
+import com.ghellere.cursomc.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ghellere.cursomc.domain.Categoria;
-import com.ghellere.cursomc.domain.Cidade;
-import com.ghellere.cursomc.domain.Cliente;
-import com.ghellere.cursomc.domain.Endereco;
-import com.ghellere.cursomc.domain.Estado;
-import com.ghellere.cursomc.domain.ItemPedido;
-import com.ghellere.cursomc.domain.Pagamento;
-import com.ghellere.cursomc.domain.PagamentoComBoleto;
-import com.ghellere.cursomc.domain.PagamentoComCartao;
-import com.ghellere.cursomc.domain.Pedido;
-import com.ghellere.cursomc.domain.Produto;
-import com.ghellere.cursomc.domain.enums.EstadoPagamento;
-import com.ghellere.cursomc.domain.enums.TipoCliente;
-import com.ghellere.cursomc.repositories.CategoriaRepository;
-import com.ghellere.cursomc.repositories.CidadeRepository;
-import com.ghellere.cursomc.repositories.ClienteRepository;
-import com.ghellere.cursomc.repositories.EnderecoRepository;
-import com.ghellere.cursomc.repositories.EstadoRepository;
-import com.ghellere.cursomc.repositories.ItemPedidoRepository;
-import com.ghellere.cursomc.repositories.PagamentoRepository;
-import com.ghellere.cursomc.repositories.PedidoRepository;
-import com.ghellere.cursomc.repositories.ProdutoRepository;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 
 @Service
 public class DBService {
@@ -118,7 +99,7 @@ public class DBService {
 		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
 		
 		
-		Cliente cli1 = new Cliente(null, "Maria Silva", "maria@gmail.com", "36378912377", TipoCliente.PESSOAFISICA);
+		Cliente cli1 = new Cliente(null, "Maria Silva", "samuel_ghellere@hotmail.com", "36378912377", TipoCliente.PESSOAFISICA);
 		cli1.getTelefones().addAll(Arrays.asList("27363323", "93838393"));
 		
 		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 203", "Jardim", "38220834", cli1, c1);
