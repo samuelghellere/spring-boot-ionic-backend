@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Profile;
 import java.text.ParseException;
 
 @Configuration
-@Profile("prod")
+@Profile("dev")
 public class DevConfig {
 
 	@Autowired
@@ -22,7 +22,7 @@ public class DevConfig {
 	@Bean
 	public boolean instantiateDatabase() throws ParseException {
 		
-		if (!"none".equals(strategy)) {
+		if (!"create".equals(strategy)) {
 			return false;
 		}
 		
